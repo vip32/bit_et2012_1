@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>dashboard</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="http://people.iola.dk/olau/flot/jquery.flot.js"></script>
+		<script src="http://urldecoderonline.com/js/jquery.urldecoder.min.js"></script>
+		<script src="http://momentjs.com/js/moment.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
+		</head>
+	<body bgcolor="#333333" text="#ffffff" link="#0099FF" vlink="#0099FF" alink="#0099FF">
+		<h2>Stats Dashboard</h2>
+		you can view stats for the following sites:
+		<ul>
+			<li><a id="testclient1" href="?site=testclient1">testclient1</a></li>
+			<li><a id="testclient2" href="?site=testclient2">testclient2</a></li>
+			<li><a id="testclient3" href="?site=testclient3">testclient3</a></li>
+		</ul><hr/>
+		<div><h2>Visitors last hour</h2>
+			<div id="hourgraph" style="width:600px;height:300px;"></div>
+			<h2>Visitors per week</h2>
+			<div id="weekgraph" style="width:600px;height:100px;"></div>
+		</div>
+	</body>
+</html>
+
+<script type="text/coffeescript">
+	$ ->
+		# ==============================================================
+		# connect to socket.io server and accept messages
+		# ==============================================================
+
+		socket = io.connect("http://localhost")
+		socket.on "connect", (data) ->
+		  	socket.emit "join room", $.url.parse(window.location.href).params["site"]
+
+		socket.on "message", (data) ->
+		  	console.log "message received: " + data.data
+		  	console.log data
+		  	
+		socket.on "statrecord", (data) ->
+		  	console.log "statrecord received: " + data.sum
+		  	console.log data
+		  	return if $.url.parse(window.location.href).params["site"] isnt data.site
+		  	updateSiteLinks data
+		  	updateHourGraph data, moment()
+		  	updateWeekGraph data, moment()
+
+		# ==============================================================
+		# functions to update the graphs and ui
+		# ==============================================================
+
+		updateSiteLinks = (data) ->
+			$("#" + data.site).text(data.site + " (" + data.sum + ")")
+
+		updateHourGraph = (data, now) ->
+			try
+				hourdata = data[now.format("YYYY")][now.format("MM")][now.format("DD")][now.format("HH")]
+				points =
+					data: []
+					bars: 
+						show:true
+				i = 0
+				while i < 60 
+					istr = fix(i)
+					if hourdata[istr] then points.data.push [istr, hourdata[istr].sum] 
+					else points.data.push [istr, 0]
+					i++
+				console.log points
+				plot = $.plot $("#hourgraph"), [points]
+				plot.draw
+			catch err
+				console.log "not updating graph, no hour data found: " + err
+				plot = $.plot($("#hourgraph"), [[]])
+				plot.draw
+		
+		updateWeekGraph = (data, now) ->
+			try
+				weekdata = data[now.format("YYYY")]["week"]
+				console.log weekdata
+				points =
+					data: []
+					bars: 
+						show:true
+				i = 0
+				while i <= moment().format("ww") 
+					istr = fix(i)
+					if weekdata[istr] then points.data.push [istr, weekdata[istr].sum] 
+					else points.data.push [istr, 0]
+					i++
+				plot = $.plot $("#weekgraph"), [points]
+				plot.draw
+			catch err
+				console.log "not updating graph, no week data found: " + err
+				plot = $.plot($("#weekgraph"), [[]])
+				plot.draw
+
+		fix = (i) ->
+			if i < 10 then "0#{i}" else i 
+</script>
+
+<script type="text/coffeescript">
+	# ==============================================================
+	# setup the hourgraph
+	# ==============================================================
+
+	$ ->
+		now = new Date()
+		options =
+			hour:
+				yaxis:
+				    min: 0
+				xaxis:
+				    show: true, min: 0, max: 60
+			week:
+				yaxis:
+				    min: 0
+				xaxis:
+				    show: true, min: 1, max: moment().format("ww")
+		plot = $.plot($("#hourgraph"), [[]], options.hour)
+		plot = $.plot($("#weekgraph"), [[]], options.week)
+</script>

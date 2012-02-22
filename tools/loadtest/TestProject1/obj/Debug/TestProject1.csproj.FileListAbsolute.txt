@@ -1,0 +1,9 @@
+E:\dropbox\Dropbox\projects\_tryout\nono2\loadtest\TestProject1\bin\Debug\LoadTest1.loadtest
+E:\dropbox\Dropbox\projects\_tryout\nono2\loadtest\TestProject1\bin\Debug\TestProject1.dll
+E:\dropbox\Dropbox\projects\_tryout\nono2\loadtest\TestProject1\bin\Debug\TestProject1.pdb
+E:\dropbox\Dropbox\projects\_tryout\nono2\loadtest\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+E:\dropbox\Dropbox\projects\_tryout\nono2\loadtest\TestProject1\obj\Debug\TestProject1.dll
+E:\dropbox\Dropbox\projects\_tryout\nono2\loadtest\TestProject1\obj\Debug\TestProject1.pdb
+C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\loadtest\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\loadtest\TestProject1\obj\Debug\TestProject1.dll
+C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\loadtest\TestProject1\obj\Debug\TestProject1.pdb

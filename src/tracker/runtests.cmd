@@ -1,0 +1,1 @@
+.\node_modules\.bin\jasmine-node.cmd --coffee --verbose spec

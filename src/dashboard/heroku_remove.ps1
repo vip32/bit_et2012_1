@@ -1,0 +1,1 @@
+heroku destroy --app dashboard1 --confirm dashboard1

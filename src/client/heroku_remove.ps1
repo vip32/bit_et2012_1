@@ -1,0 +1,1 @@
+heroku destroy --app client1 --confirm client1

@@ -1,0 +1,97 @@
+info it worked if it ends with ok
+verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+verbose cli   'install',
+verbose cli   'moment' ]
+info using npm@1.1.1
+info using node@v0.6.11
+verbose config file C:\Users\vvproosdij\.npmrc
+verbose config file C:\Program Files (x86)\nodejs\etc\npmrc
+verbose config file C:\Program Files (x86)\nodejs\node_modules\npm\npmrc
+verbose mkdir done: C:\Users\vvproosdij\AppData\Roaming\npm 755
+verbose mkdir done: C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools 755
+verbose cache add [ 'moment', null ]
+silly cache add: name, spec, args [ undefined, 'moment', [ 'moment', null ] ]
+verbose parsed url { pathname: 'moment', path: 'moment', href: 'moment' }
+verbose addNamed [ 'moment', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'moment', '', false ]
+verbose raw, before any munging moment
+verbose url resolving [ 'https://registry.npmjs.org/', './moment' ]
+verbose url resolved https://registry.npmjs.org/moment
+verbose etag "B1O5TWIZJSFXGHKWIYQ082J9J"
+http GET https://registry.npmjs.org/moment
+http 304 https://registry.npmjs.org/moment
+silly get cb [ 304,
+silly get cb   { server: 'CouchDB/1.1.0 (Erlang OTP/R14B04)',
+silly get cb     etag: '"B1O5TWIZJSFXGHKWIYQ082J9J"',
+silly get cb     date: 'Tue, 21 Feb 2012 14:08:30 GMT',
+silly get cb     'content-length': '0' } ]
+verbose etag moment from cache
+verbose mkdir done: C:\Users\vvproosdij\AppData\Roaming\npm-cache\moment 755
+silly name, range, hasData 2 [ 'moment', '', true ]
+silly versions [ 'moment',
+silly versions   [ '1.0.0', '1.0.1', '1.1.0', '1.1.1', '1.2.0', '1.3.0', '1.4.0' ] ]
+verbose bin dist [ '0.6-ares1.7.5-DEV-evundefined-openssl0.9.8r-v83.6.6.20-win32-ia32-6.1.7601',
+verbose bin dist   { shasum: 'b7ae560a994ccc2193967d8fe9c2d139fbdbc96b',
+verbose bin dist     tarball: 'http://registry.npmjs.org/moment/-/moment-1.4.0.tgz' } ]
+WARN moment@1.4.0 devDependencies field should be hash of <name>:<version-range> pairs
+verbose caching C:\Users\vvproosdij\AppData\Roaming\npm-cache\moment\1.4.0\package\package.json
+verbose loadDefaults moment@1.4.0
+silly resolved [ { name: 'moment',
+silly resolved     version: '1.4.0',
+silly resolved     description: 'Moment.js is a javascript date library that helps create, manipulate, and format dates without extending the `Date` prototype.',
+silly resolved     homepage: 'https://github.com/timrwood/moment',
+silly resolved     author: 
+silly resolved      { name: 'Tim Wood',
+silly resolved        email: 'washwithcare@gmail.com',
+silly resolved        url: 'http://timwoodcreates.com/' },
+silly resolved     keywords: [ 'moment', 'date' ],
+silly resolved     main: './moment',
+silly resolved     engines: { node: '*' },
+silly resolved     repository: { type: 'git', url: 'git://github.com/timrwood/moment.git' },
+silly resolved     bugs: { url: 'https://github.com/timrwood/moment/issues' },
+silly resolved     licenses: [ { type: 'MIT' } ],
+silly resolved     _id: 'moment@1.4.0',
+silly resolved     devDependencies: 
+silly resolved      { 'uglify-js': '',
+silly resolved        jshint: '',
+silly resolved        gzip: '',
+silly resolved        jade: '',
+silly resolved        'clean-css': '',
+silly resolved        qunit: '',
+silly resolved        bunker: '' },
+silly resolved     dependencies: {},
+silly resolved     optionalDependencies: {},
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.1.1',
+silly resolved     _nodeVersion: 'v0.6.11',
+silly resolved     _defaultsLoaded: true } ]
+info into C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools moment@1.4.0
+info installOne moment@1.4.0
+info unbuild C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\moment
+verbose from cache C:\Users\vvproosdij\AppData\Roaming\npm-cache\moment\1.4.0\package\package.json
+verbose mkdir done: C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\___moment.npm 755
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\moment
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar undefined
+verbose gunzed C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\___moment.npm\package
+verbose rm'ed C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\moment
+ERR! error installing moment@1.4.0
+info unbuild C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\moment
+verbose installOne cb moment@1.4.0
+ERR! Error: EPERM, operation not permitted 'C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\___moment.npm\package'
+ERR! 
+ERR! Please try running this command again as root/Administrator.
+ERR! 
+ERR! System Windows_NT 6.1.7601
+ERR! command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "moment"
+ERR! cwd C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools
+ERR! node -v v0.6.11
+ERR! npm -v 1.1.1
+ERR! path C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\___moment.npm\package
+ERR! code EPERM
+ERR! message EPERM, operation not permitted 'C:\data\Dropbox\projects\_bit\ET2012_1.coffee\tools\node_modules\___moment.npm\package'
+ERR! errno {}
+verbose exit [ 1, true ]

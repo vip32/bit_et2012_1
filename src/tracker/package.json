@@ -1,0 +1,13 @@
+{
+  "name": "tracker",
+  "version": "0.0.1",
+  "dependencies": { 
+    "coffee-script": "1.2.0",
+   	"express": "2.5.6",
+    "mongodb": "0.9.7",
+    "mongoskin": "latest",
+    "socket.io": "0.8.7",
+    "jasmine-node": "1.0.19",
+    "should": "0.5.1"
+  }
+}
