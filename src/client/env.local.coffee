@@ -7,4 +7,4 @@ exports.settings =
 		name: 'testclient1'
 	tracker:
 		host: 'localhost'
-		port: 1200
+		port: 1200  

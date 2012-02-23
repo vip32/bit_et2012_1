@@ -7,7 +7,7 @@ util = require "util"
 class Pulser extends events.EventEmitter
 	start: =>
 		self = this
-		@id = setInterval ->
+		@id = setInterval -> # callback, this is run on the eventloop
 			util.log ">>>> emit pulse"
 			self.emit "pulse", "data:data"
 			, 1000
