@@ -4,7 +4,7 @@ argv = process.argv.slice(2) # heroku port
 # setup the webserver, always serves static index.html
 start = ->
   server = require("http").createServer( (req, res) ->
-    require("fs").readFile __dirname + "/index.html", (err, data) ->
+    require("fs").readFile __dirname + "/public/index.html", (err, data) ->
       if err
         res.writeHead 500
         return res.end("Error loading index.html")
