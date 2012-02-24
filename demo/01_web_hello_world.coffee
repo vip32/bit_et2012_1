@@ -10,6 +10,7 @@ server = http.createServer (req, res) ->
 		res.end "World\n"
 	, 2000
 server.listen 1337, "127.0.0.1"
+console.log "server started on port 1337"
 
 # curl -i http://127.0.0.1:1337/
 # tools\ab.exe  -c 100 -n 100 http://127.0.0.1:1337/
